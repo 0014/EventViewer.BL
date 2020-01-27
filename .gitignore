@@ -1,0 +1,14 @@
+EventViewer.Api/bin/
+EventViewer.Api/bin/*
+EventViewer.Api/obj/
+EventViewer.Api/obj/*
+EventViewer.DAL/bin/
+EventViewer.DAL/bin/*
+EventViewer.DAL/obj/
+EventViewer.DAL/obj/*
+EventViewer.Data/bin/
+EventViewer.Data/bin/*
+EventViewer.Data/obj/
+EventViewer.Data/obj/*
+.vs/
+.vs/*
