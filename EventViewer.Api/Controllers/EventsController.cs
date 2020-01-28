@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using EventViewer.DAL;
+﻿using EventViewer.DAL;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventViewer.Api.Controllers
@@ -29,8 +28,7 @@ namespace EventViewer.Api.Controllers
         public JsonResult Get(int id)
         {
             var eventt = _db.Events
-                .Find(x => x.EventId == id)
-                .FirstOrDefault();
+                .SingleOrDefault(x => x.EventId == id);
 
             return Json(eventt);
         }

@@ -9,7 +9,7 @@ namespace EventViewer.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("");
+            optionsBuilder.UseSqlServer("Enter_Connection_String_Here");
         }
     }
 }

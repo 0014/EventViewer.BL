@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using EventViewer.Data;
+﻿using EventViewer.Data;
 
 namespace EventViewer.DAL
 {

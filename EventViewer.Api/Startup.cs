@@ -18,18 +18,27 @@ namespace EventViewer.Api
 
         public IConfiguration Configuration { get; }
 
-        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+        readonly string AllowSpecificOrigins = "_myAllowSpecificOrigins";
 
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors(options =>
             {
-                options.AddPolicy(MyAllowSpecificOrigins,
+                options.AddPolicy(AllowSpecificOrigins,
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:4200")
+                        // cross domain request are permitted, to disable cors 
+                        // for certain domains use the second builder
+                        builder.WithOrigins("*")
                             .AllowAnyHeader()
                             .AllowAnyMethod();
+                        
+                        //builder.WithOrigins(
+                        //    "http://localhost:4200",
+                        //    "https://domain1.com",
+                        //    "http://domain2.com")
+                        //    .AllowAnyHeader()
+                        //    .AllowAnyMethod();
                     });
             });
 
@@ -51,7 +60,7 @@ namespace EventViewer.Api
                 app.UseHsts();
             }
 
-            app.UseCors(MyAllowSpecificOrigins);
+            app.UseCors(AllowSpecificOrigins);
             app.UseHttpsRedirection();
             app.UseMvc();
         }
