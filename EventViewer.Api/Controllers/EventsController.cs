@@ -18,7 +18,7 @@ namespace EventViewer.Api.Controllers
         [HttpGet]
         public JsonResult Get()
         {
-            var events = _db.Events.GetAll();
+            var events = _db.Events.AllEventsWithBasicInfo();
 
             return Json(events);
         }
